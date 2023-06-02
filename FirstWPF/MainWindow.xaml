@@ -1,0 +1,29 @@
+﻿<Window x:Name="tb_output" x:Class="FirstWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Image Source="https://img.freepik.com/premium-vector/binary-code-background_88211-416.jpg" Stretch="UniformToFill"/>
+        <Button x:Name="btn_encrypt" Content="Encrypt" HorizontalAlignment="Left" Height="29" Margin="100,168,0,0" VerticalAlignment="Top" Width="120" Click="btn_ceasar_Click" RenderTransformOrigin="0.54,1.277"/>
+        <TextBox x:Name="tb_message" HorizontalAlignment="Left" Height="42" Margin="98,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="611" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="btn_reverse" Content="Reverse" HorizontalAlignment="Left" Height="28" Margin="587,30,0,0" VerticalAlignment="Top" Width="122" Click="btn_reverse_Click"/>
+        <TextBlock x:Name="text1" HorizontalAlignment="Left" Height="18" Margin="98,44,0,0" TextWrapping="Wrap" Text="Enter message to be encoded:" VerticalAlignment="Top" Width="182" Foreground="Red"/>
+        <TextBox x:Name="tb_output1" HorizontalAlignment="Left" Height="30" Margin="253,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+        <Button x:Name="btn_decrypt" Content="Decrypt" HorizontalAlignment="Left" Height="30" Margin="100,217,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.428,2.345" Click="btn_decrypt_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="100,125,0,0" TextWrapping="Wrap" Text="Enter shift value:" VerticalAlignment="Top" Width="237" Foreground="Red"/>
+        <TextBox x:Name="tb_shift" HorizontalAlignment="Left" Height="22" Margin="202,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33">
+            <TextBox.Text>
+                <Binding Path="IntegerInput" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="tb_output2" HorizontalAlignment="Left" Height="30" Margin="253,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+    </Grid>
+</Window>
